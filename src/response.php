@@ -10,6 +10,7 @@ function response($code, $message)
               "message" => $message
        )];
        echo json_encode($response);
+       http_response_code($code);
 }
 
 function responseData($code, $message, $data)
@@ -20,6 +21,7 @@ function responseData($code, $message, $data)
               "data" => $data
        )];
        echo json_encode($response);
+       http_response_code($code);
 }
 
 function responseError($code, $message, $error)
@@ -30,6 +32,18 @@ function responseError($code, $message, $error)
               "error" => $error
        )];
        echo json_encode($response);
+       http_response_code($code);
+}
+
+function responseExeption($code, $message, $exception)
+{
+       $response = [array(
+              'code' => $code,
+              "message" => $message,
+              "exception" => $exception
+       )];
+       echo json_encode($response);
+       http_response_code($code);
 }
 
 
@@ -43,6 +57,7 @@ function response200()
               "message" => "The request has succeeded."
        )];
        echo json_encode($response);
+       http_response_code(200);
 }
 
 
@@ -54,6 +69,7 @@ function responseData200($data)
               "data" => $data
        )];
        echo json_encode($response);
+       http_response_code(200);
 }
 
 
@@ -67,6 +83,7 @@ function response300()
               "message" => "The response to the request can be found under a different URI and SHOULD be retrieved using a request  resource."
        )];
        echo json_encode($response);
+       http_response_code(300);
 }
 
 
@@ -78,6 +95,7 @@ function responseData300($data)
               "data" => $data
        )];
        echo json_encode($response);
+       http_response_code(300);
 }
 
 /*============================================
@@ -90,6 +108,7 @@ function response400()
               "message" => "The request cannot be fulfilled due to bad syntax."
        )];
        echo json_encode($response);
+       http_response_code(400);
 }
 
 
@@ -101,6 +120,7 @@ function responseData400($data)
               "data" => $data
        )];
        echo json_encode($response);
+       http_response_code(400);
 }
 
 /*============================================
@@ -113,6 +133,7 @@ function response403()
               "message" => "The server understood the request, but is refusing to fulfill it. Authorization will not help and the request SHOULD NOT be repeated."
        )];
        echo json_encode($response);
+       http_response_code(403);
 }
 
 
@@ -124,6 +145,7 @@ function responseData403($data)
               "data" => $data
        )];
        echo json_encode($response);
+       http_response_code(403);
 }
 
 
@@ -137,6 +159,7 @@ function response500()
               "message" => "The server encountered an unexpected condition which prevented it from fulfilling the request."
        )];
        echo json_encode($response);
+       http_response_code(500);
 }
 
 
@@ -148,4 +171,5 @@ function responseData500($data)
               "data" => $data
        )];
        echo json_encode($response);
+       http_response_code(500);
 }

@@ -4,7 +4,11 @@ require_once "../src/response.php";
 require_once "../src/requests.php";
 
 requestGET(function () {
-       response200();
+       try {
+              response500();
+       } catch (Exception $exception) {
+              response200();
+       }
 });
 
 requestPOST(function () {
