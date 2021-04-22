@@ -1,15 +1,14 @@
 
 <?php
 
-const codeOK = "...";
-const codePOST = "...";
-const codePUT = "...";
-const codePATCH = "...";
-const codeDELETE = "...";
+const code200 = "...";
+const code300 = "...";
+const code400 = "...";
+const code403 = "...";
+const code500 = "...";
 
-const messageOK = "...";
-const messagePOST = "...";
-const messagePUT = "...";
-const messagePATCH = "...";
-const messageDELETE = "...";
-
+const message200 = "...";
+const message300 = "...";
+const message400 = "...";
+const message403 = "...";
+const message500 = "...";

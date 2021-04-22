@@ -35,15 +35,15 @@ function responseError($code, $message, $error)
        http_response_code($code);
 }
 
-function responseExeption($code, $message, $exception)
+function responseExeption($exception)
 {
        $response = [array(
-              'code' => $code,
-              "message" => $message,
+              'code' => 500,
+              "message" => "The server encountered an unexpected condition which prevented it from fulfilling the request.",
               "exception" => $exception
        )];
        echo json_encode($response);
-       http_response_code($code);
+       http_response_code(500);
 }
 
 
