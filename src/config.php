@@ -1,6 +1,9 @@
 
 <?php
 
+const codeRes = "200";
+const codeResData = "200";
+
 const code200 = "...";
 const code300 = "...";
 const code400 = "...";

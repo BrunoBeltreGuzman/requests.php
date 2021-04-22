@@ -3,36 +3,36 @@
 /*============================================
                                           Response
 =============================================*/
-function response($code, $message)
+function response()
 {
        $response = [array(
-              'code' => $code,
-              "message" => $message
+              'code' => 200,
+              "message" => "The request has succeeded.",
        )];
        echo json_encode($response);
-       http_response_code($code);
+       http_response_code(200);
 }
 
-function responseData($code, $message, $data)
+function responseData($data)
 {
        $response = [array(
-              'code' => $code,
-              "message" => $message,
+              'code' => 200,
+              "message" => "The request has succeeded.",
               "data" => $data
        )];
        echo json_encode($response);
-       http_response_code($code);
+       http_response_code(200);
 }
 
-function responseError($code, $message, $error)
+function responseError($error)
 {
        $response = [array(
-              'code' => $code,
-              "message" => $message,
+              'code' => 500,
+              "message" => "The server encountered an unexpected condition which prevented it from fulfilling the request.",
               "error" => $error
        )];
        echo json_encode($response);
-       http_response_code($code);
+       http_response_code(500);
 }
 
 function responseExeption($exception)
@@ -46,9 +46,55 @@ function responseExeption($exception)
        http_response_code(500);
 }
 
+/*============================================
+                                          Response Full
+=============================================*/
+function responseFull($code, $message)
+{
+       $response = [array(
+              'code' => $code,
+              "message" => $message,
+       )];
+       echo json_encode($response);
+       http_response_code($code);
+}
+
+function responseDataFull($code, $message, $data)
+{
+       $response = [array(
+              'code' => $code,
+              "message" => $message,
+              "data" => $data
+       )];
+       echo json_encode($response);
+       http_response_code($code);
+}
+
+function responseErrorFull($code, $message, $error)
+{
+       $response = [array(
+              'code' => $code,
+              "message" => $message,
+              "error" => $error
+       )];
+       echo json_encode($response);
+       http_response_code($code);
+}
+
+function responseExeptionFull($code, $message, $exception)
+{
+       $response = [array(
+              'code' => $code,
+              "message" => $message,
+              "exception" => $exception
+       )];
+       echo json_encode($response);
+       http_response_code($code);
+}
+
 
 /*============================================
-                                          Response 200 (OK)
+                            Response 200 (OK)
 =============================================*/
 function response200()
 {
@@ -74,7 +120,7 @@ function responseData200($data)
 
 
 /*============================================
-                                          Response 300 (Redirect)
+                            Response 300 (Redirect)
 =============================================*/
 function response300()
 {
@@ -99,7 +145,7 @@ function responseData300($data)
 }
 
 /*============================================
-                                          Response 400 (Client Error)
+                            Response 400 (Client Error)
 =============================================*/
 function response400()
 {
@@ -124,7 +170,7 @@ function responseData400($data)
 }
 
 /*============================================
-                                          Response 403 (Forbidden)
+                            Response 403 (Forbidden)
 =============================================*/
 function response403()
 {
@@ -150,7 +196,7 @@ function responseData403($data)
 
 
 /*============================================
-                                          Response 403 (Forbidden)
+                            Response 403 (Forbidden)
 =============================================*/
 function response500()
 {
