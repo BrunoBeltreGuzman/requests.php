@@ -182,6 +182,32 @@ requestPUT(function () {
 }
 ```
 
+**Usage**
+
+```php
+
+require_once "../src/response.php";
+require_once "../src/requests.php";
+require_once "../src/parameters.php";
+
+
+// {id}
+requestGET(function () {
+       try {
+              $GET = getGetParameters();
+              if ($GET["id"]) {
+                     $data = [array('id' => $GET["id"])];
+                     responseData($data);
+              } else {
+                     response400();
+              }
+       } catch (Exception $exception) {
+              responseExeption($exception);
+       }
+});
+
+```
+
 References:
 
 https://www.restapitutorial.com/httpstatuscodes.html
