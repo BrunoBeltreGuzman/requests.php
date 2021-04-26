@@ -92,9 +92,19 @@ $response = [array(
 | **response500()**                                        |
 | **responseData500(`$data`)**                             |
 
+**Parameters**
+
+| Function                  | Descripción                                                       |
+| ------------------------- | ----------------------------------------------------------------- |
+| **getGetParameters()**    | Returns all the parameters in the request by the `GET` method.    |
+| **getPostParameters()**   | Returns all the parameters in the request by the `POST` method.   |
+| **getPutParameters()**    | Returns all the parameters in the request by the `PUT` method.    |
+| **getPatchParameters()**  | Returns all the parameters in the request by the `PATCH` method.  |
+| **getDeleteParameters()** | Returns all the parameters in the request by the `DELETE` method. |
+
 # Test
 
-**Request and Response**
+**Request**
 
 **Request:** Request GET
 
@@ -136,6 +146,8 @@ requestDELETE(function () {
 });
 ```
 
+**Response**
+
 **Response:** OK `response200();`
 
 ```php
@@ -149,6 +161,25 @@ response200();
               "message": "The request has succeeded."
        }
 ]
+```
+
+**Parameters**
+
+```php
+// {id}
+requestPUT(function () {
+       try {
+              $PUT = getPutParameters();
+              if ($PUT["id"]) {
+                     $data = [array('id' => $PUT["id"])];
+                     responseData($data);
+              } else {
+                     response400();
+              }
+       } catch (Exception $exception) {
+              responseExeption($exception);
+       }
+}
 ```
 
 References:
