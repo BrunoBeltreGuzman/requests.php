@@ -2,16 +2,21 @@
 
 Routers and methods to HTTP Requests and Response
 
-# Download file
+# Download
 
-https://www.requests.com/
+```console
+cd myproject
+git clone https://github.com/BrunoBeltreGuzman/requests.php.git
+```
+
+_You can delete `test` directory and `README.md`, `index.php` files._
 
 # Table of Contents
 
 - [Validator.php](#validator.php)
 
      - [Table of Contents](#Table-of-Contents)
-     - [Download file](#Download-File)
+     - [Download](#Download)
      - [Usage](#Usage)
      - [Test](#Test)
      - [License](#License)
