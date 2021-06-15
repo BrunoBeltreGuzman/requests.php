@@ -213,7 +213,7 @@ function responseData403($data)
 
 
 /*============================================
-                            Response 403 (Forbidden)
+                            Response 500 (Error)
 =============================================*/
 function response500()
 {
