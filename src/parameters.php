@@ -63,6 +63,5 @@ function getDeleteParameters()
 function getHeaders()
 {
        $headers = apache_request_headers();
-       //$headers['Authorization'];
        return $headers;
 }

@@ -36,6 +36,7 @@ function response()
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(200);
+       exit;
 }
 
 function responseData($data)
@@ -49,6 +50,7 @@ function responseData($data)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(200);
+       exit;
 }
 
 function responseError($error)
@@ -61,6 +63,7 @@ function responseError($error)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(500);
+       exit;
 }
 
 function responseExeption($exception)
@@ -73,6 +76,7 @@ function responseExeption($exception)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(500);
+       exit;
 }
 
 /*============================================
@@ -87,6 +91,7 @@ function responseFull($code, $message)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code($code);
+       exit;
 }
 
 function responseDataFull($code, $message, $data)
@@ -99,6 +104,7 @@ function responseDataFull($code, $message, $data)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code($code);
+       exit;
 }
 
 function responseErrorFull($code, $message, $error)
@@ -111,6 +117,7 @@ function responseErrorFull($code, $message, $error)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code($code);
+       exit;
 }
 
 function responseExeptionFull($code, $message, $exception)
@@ -123,6 +130,7 @@ function responseExeptionFull($code, $message, $exception)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code($code);
+       exit;
 }
 
 
@@ -138,6 +146,7 @@ function response200()
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(200);
+       exit;
 }
 
 
@@ -151,6 +160,7 @@ function responseData200($data)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(200);
+       exit;
 }
 
 
@@ -166,6 +176,7 @@ function response300()
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(300);
+       exit;
 }
 
 
@@ -179,6 +190,7 @@ function responseData300($data)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(300);
+       exit;
 }
 
 /*============================================
@@ -193,6 +205,7 @@ function response400()
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(400);
+       exit;
 }
 
 
@@ -206,6 +219,7 @@ function responseData400($data)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(400);
+       exit;
 }
 
 /*============================================
@@ -220,6 +234,7 @@ function response403()
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(403);
+       exit;
 }
 
 
@@ -233,6 +248,7 @@ function responseData403($data)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(403);
+       exit;
 }
 
 
@@ -248,6 +264,7 @@ function response500()
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(500);
+       exit;
 }
 
 
@@ -261,4 +278,5 @@ function responseData500($data)
        header("Content-Type: application/json");
        echo json_encode($response);
        http_response_code(500);
+       exit;
 }
