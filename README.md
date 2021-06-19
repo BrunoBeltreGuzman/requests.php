@@ -35,46 +35,7 @@ _You can delete `test` directory and `README.md`, `index.php` files._
 
 **Response**
 
-**Function:** `response()`
-
-```php
-$response = [array(
-       'code' => 200,
-       "message" => "The request has succeeded.",
-)];
-```
-
-**Function:** `responseData($data)`
-
-```php
-$response = [array(
-       'code' => 200,
-       "message" => "The request has succeeded.",
-       "data" => $data
-)];
-```
-
-**Function:** `responseExeption($exception)`
-
-```php
-$response = [array(
-       'code' => 500,
-       "message" => "The server encountered an unexpected condition which prevented it from fulfilling the request.",
-       "exception" => $exception
-)];
-```
-
-**Function:** `responseError($error)`
-
-```php
-$response = [array(
-       'code' => 503,
-       "message" => "The server encountered an unexpected condition which prevented it from fulfilling the request.",
-       "error" => $error
-)];
-```
-
-**Todos**
+**Function:**
 
 | Function                                                 |
 | -------------------------------------------------------- |
@@ -149,42 +110,6 @@ requestPATCH(function () {
 requestDELETE(function () {
        //you do anything
 });
-```
-
-**Response**
-
-**Response:** OK `response200();`
-
-```php
-response200();
-```
-
-```json
-[
-       {
-              "code": 200,
-              "message": "The request has succeeded."
-       }
-]
-```
-
-**Parameters**
-
-```php
-// {id}
-requestPUT(function () {
-       try {
-              $PUT = getPutParameters();
-              if ($PUT["id"]) {
-                     $data = [array('id' => $PUT["id"])];
-                     responseData($data);
-              } else {
-                     response400();
-              }
-       } catch (Exception $exception) {
-              responseExeption($exception);
-       }
-}
 ```
 
 **Usage**
