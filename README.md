@@ -17,7 +17,8 @@ Routers and methods to HTTP Requests and Response
 ```console
 git clone https://github.com/BrunoBeltreGuzman/requests.php.git
 ```
-
+> Note:
+>
 _You can delete `test` directory and `README.md`, `index.php` files._
 
 # Usage
@@ -34,10 +35,11 @@ _You can delete `test` directory and `README.md`, `index.php` files._
 
 Also you can use endpoint strictly, using `request` `method` and `strict`:
 
-```php
+```PHP
 requestGETStrict(callback);
 ```
-
+> Note:
+>
 _In request PUT, PATCH, and DELETE for sen data, can you use form `x-www-form-urlencoded`_
 
 **Response**
