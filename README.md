@@ -2,14 +2,6 @@
 
 Routers and methods to HTTP Requests and Response
 
-# Download
-
-```console
-git clone https://github.com/BrunoBeltreGuzman/requests.php.git
-```
-
-_You can delete `test` directory and `README.md`, `index.php` files._
-
 # Table of Contents
 
 - [Validator.php](#validator.php)
@@ -19,6 +11,14 @@ _You can delete `test` directory and `README.md`, `index.php` files._
      - [Usage](#Usage)
      - [Test](#Test)
      - [License](#License)
+
+# Download
+
+```console
+git clone https://github.com/BrunoBeltreGuzman/requests.php.git
+```
+
+_You can delete `test` directory and `README.md`, `index.php` files._
 
 # Usage
 
@@ -31,6 +31,14 @@ _You can delete `test` directory and `README.md`, `index.php` files._
 | **requestPUT($callback)**    | set request with method HTTP `PUT` .    |
 | **requestPATCH($callback)**  | set request with method HTTP `PATCH` .  |
 | **requestDELETE($callback)** | set request with method HTTP `DELETE` . |
+
+Also you can use endpoint strictly, using `request` `method` and `strict`:
+
+```php
+requestGETStrict(callback);
+```
+
+_In request PUT, PATCH, and DELETE for sen data, can you use form `x-www-form-urlencoded`_
 
 **Response**
 
