@@ -13,7 +13,7 @@ Routers and methods to HTTP Requests and Response
      - [License](#License)
 
 # Download
-
+[Download.zip](https://github.com/BrunoBeltreGuzman/requests.php/archive/refs/heads/main.zip)
 ```console
 git clone https://github.com/BrunoBeltreGuzman/requests.php.git
 ```
