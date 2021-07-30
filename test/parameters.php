@@ -2,7 +2,6 @@
 
 <?php
 
-require_once "../src/response.php";
 require_once "../src/requests.php";
 require_once "../src/parameters.php";
 

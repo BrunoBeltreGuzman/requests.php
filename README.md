@@ -13,13 +13,16 @@ Routers and methods to HTTP Requests and Response
      - [License](#License)
 
 # Download
+
 [Download.zip](https://github.com/BrunoBeltreGuzman/requests.php/archive/refs/heads/main.zip)
+
 ```console
 git clone https://github.com/BrunoBeltreGuzman/requests.php.git
 ```
+
 > Note:
 >
-_You can delete `test` directory and `README.md`, `index.php` files._
+> _You can delete `test` directory and `README.md`, `index.php` files._
 
 # Usage
 
@@ -38,9 +41,10 @@ Also you can use endpoint strictly, using `request` `method` and `strict`:
 ```PHP
 requestGETStrict(callback);
 ```
+
 > Note:
 >
-_In request PUT, PATCH, and DELETE for sen data, can you use form `x-www-form-urlencoded`_
+> _In request PUT, PATCH, and DELETE for sen data, can you use form `x-www-form-urlencoded`_
 
 **Response**
 
@@ -125,7 +129,6 @@ requestDELETE(function () {
 
 ```php
 
-require_once "../src/response.php";
 require_once "../src/requests.php";
 require_once "../src/parameters.php";
 
