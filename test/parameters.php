@@ -3,7 +3,6 @@
 <?php
 
 require_once "../src/requests.php";
-require_once "../src/parameters.php";
 
 
 // {id}
