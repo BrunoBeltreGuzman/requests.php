@@ -23,110 +23,130 @@
        SOFTWARE.
 */
 
-function requestGET($callback)
+function requestGET($callback, $middleware = NULL, $isStrict = false)
 {
        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+              if ($middleware != NULL) {
+                     $middleware();
+              }
               $callback();
+              exit;
        }
-}
 
-function requestPOST($callback)
-{
-       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-              $callback();
-       }
-}
-
-function requestPUT($callback)
-{
-       if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-              $callback();
-       }
-}
-
-function requestPATCH($callback)
-{
-       if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
-              $callback();
-       }
-}
-
-function requestDELETE($callback)
-{
-       if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-              $callback();
-       }
-}
-
-function requestGETStrict($callback)
-{
-       if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-              $callback();
-       } else {
+       if ($isStrict) {
               $response = array(
                      "code" => 405,
                      "message" => "The method specified in the Request-Line is not allowed for the resource identified by the Request-URI.",
                      "method" => "GET"
               );
+              header("Content-Type: application/json");
               echo json_encode($response);
+              http_response_code(200);
+              exit;
        }
 }
 
-function requestPOSTStrict($callback)
-{
+function requestPOST(
+       $callback,
+       $middleware = NULL,
+       $isStrict = false
+) {
        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+              if ($middleware != NULL) {
+                     $middleware();
+              }
               $callback();
-       } else {
+              exit;
+       }
+
+       if ($isStrict) {
               $response = array(
                      "code" => 405,
                      "message" => "The method specified in the Request-Line is not allowed for the resource identified by the Request-URI.",
                      "method" => "POST"
               );
+              header("Content-Type: application/json");
               echo json_encode($response);
+              http_response_code(200);
+              exit;
        }
 }
 
-function requestPUTStrict($callback)
-{
+function requestPUT(
+       $callback,
+       $middleware = NULL,
+       $isStrict = false
+) {
        if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+              if ($middleware != NULL) {
+                     $middleware();
+              }
               $callback();
-       } else {
+              exit;
+       }
+
+       if ($isStrict) {
               $response = array(
                      "code" => 405,
                      "message" => "The method specified in the Request-Line is not allowed for the resource identified by the Request-URI.",
                      "method" => "PUT"
               );
+              header("Content-Type: application/json");
               echo json_encode($response);
+              http_response_code(200);
+              exit;
        }
 }
 
-
-function requestPATCHStrict($callback)
-{
+function requestPATCH(
+       $callback,
+       $middleware = NULL,
+       $isStrict = false
+) {
        if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
+              if ($middleware != NULL) {
+                     $middleware();
+              }
               $callback();
-       } else {
+              exit;
+       }
+
+       if ($isStrict) {
               $response = array(
                      "code" => 405,
                      "message" => "The method specified in the Request-Line is not allowed for the resource identified by the Request-URI.",
                      "method" => "PATCH"
               );
+              header("Content-Type: application/json");
               echo json_encode($response);
+              http_response_code(200);
+              exit;
        }
 }
 
-
-function requestDELETEStrict($callback)
-{
+function requestDELETE(
+       $callback,
+       $middleware = NULL,
+       $isStrict = false
+) {
        if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+              if ($middleware != NULL) {
+                     $middleware();
+              }
               $callback();
-       } else {
+              exit;
+       }
+
+       if ($isStrict) {
               $response = array(
                      "code" => 405,
                      "message" => "The method specified in the Request-Line is not allowed for the resource identified by the Request-URI.",
-                     "method" => "DELETE "
+                     "method" => "DELETE"
               );
+              header("Content-Type: application/json");
               echo json_encode($response);
+              http_response_code(200);
+              exit;
        }
 }
 
