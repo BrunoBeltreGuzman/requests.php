@@ -52,24 +52,8 @@ requestGETStrict(callback);
 
 | Function                                                 |
 | -------------------------------------------------------- |
-| **response()**                                           |
-| **responseData(`$data`)**                                |
-| **responseException(`$exception`)**                      |
-| **responseError(`$error`)**                              |
-| **responseFull(`$code, $message`)**                      |
-| **responseDataFull(`$code, $message, $data`)**           |
-| **responseExceptionFull(`$code, $message, $exception`)** |
-| **responseErrorFull(`$code, $message, $error`)**         |
-| **response200()**                                        |
-| **responseData200(`$data`)**                             |
-| **response300()**                                        |
-| **responseData300(`$data`)**                             |
-| **response400()**                                        |
-| **responseData400(`$data`)**                             |
-| **response403()**                                        |
-| **responseData403(`$data`)**                             |
-| **response500()**                                        |
-| **responseData500(`$data`)**                             |
+| **response(`$response = ""`, `$code = 200`);**                                           |
+
 
 **Parameters**
 
@@ -129,7 +113,7 @@ requestDELETE(function () {
 
 ```php
 
-require_once "../src/requests.php";
+require_once "requests.php";
 
 // {id}
 requestGET(function () {
@@ -137,12 +121,12 @@ requestGET(function () {
               $GET = getGetParameters();
               if ($GET["id"]) {
                      $data = [array('id' => $GET["id"])];
-                     responseData($data);
+                     response($data);
               } else {
-                     response400();
+                     response("BadRequest", 400);
               }
        } catch (Exception $exception) {
-              responseExeption($exception);
+              response($exception, 500);
        }
 });
 
