@@ -9,14 +9,10 @@ require_once "../src/requests.php";
 requestGET(function () {
        try {
               $GET = getGetParameters();
-              if ($GET["id"]) {
-                     $data = [array('id' => $GET["id"])];
-                     responseData($data);
-              } else {
-                     response400();
-              }
+              $data = [array('id' => $GET["id"])];
+              response($data);
        } catch (Exception $exception) {
-              responseExeption($exception);
+              response($exception, 500);
        }
 });
 
@@ -24,14 +20,10 @@ requestGET(function () {
 requestPOST(function () {
        try {
               $POST = getPostParameters();
-              if ($POST["name"]) {
-                     $data = [array('name' => $POST["name"])];
-                     responseData($data);
-              } else {
-                     response400();
-              }
+              $data = [array('name' => $POST["name"])];
+              response($data);
        } catch (Exception $exception) {
-              responseExeption($exception);
+              response($exception, 500);
        }
 });
 
@@ -40,14 +32,11 @@ requestPOST(function () {
 requestPUT(function () {
        try {
               $PUT = getPutParameters();
-              if ($PUT["id"]) {
-                     $data = [array('id' => $PUT["id"])];
-                     responseData($data);
-              } else {
-                     response400();
-              }
+
+              $data = [array('id' => $PUT["id"])];
+              response($data);
        } catch (Exception $exception) {
-              responseExeption($exception);
+              response($exception, 500);
        }
 });
 
@@ -56,14 +45,10 @@ requestPUT(function () {
 requestPATCH(function () {
        try {
               $PATCH = getPatchParameters();
-              if ($PATCH["name"]) {
-                     $data = [array('name' => $PATCH["name"])];
-                     responseData($data);
-              } else {
-                     response400();
-              }
+              $data = [array('name' => $PATCH["name"])];
+              response($data);
        } catch (Exception $exception) {
-              responseExeption($exception);
+              response($exception, 500);
        }
 });
 
@@ -72,13 +57,9 @@ requestPATCH(function () {
 requestDELETE(function () {
        try {
               $DELETE = getDeleteParameters();
-              if ($DELETE["id"]) {
-                     $data = [array('id' => $DELETE["id"])];
-                     responseData($data);
-              } else {
-                     response400();
-              }
+              $data = [array('id' => $DELETE["id"])];
+              response($data);
        } catch (Exception $exception) {
-              responseExeption($exception);
+              response($exception, 500);
        }
 });

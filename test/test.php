@@ -4,24 +4,24 @@ require_once "../src/requests.php";
 
 requestGET(function () {
        try {
-              response200();
+              response();
        } catch (Exception $exception) {
-              responseExeption($exception);
+              response($exception, 500);
        }
 });
 
 requestPOST(function () {
-       response200();
+       response();
 });
 
 requestPUT(function () {
-       response200();
+       response();
 });
 
 requestPATCH(function () {
-       response200();
+       response();
 });
 
 requestDELETE(function () {
-       response200();
+       response();
 });

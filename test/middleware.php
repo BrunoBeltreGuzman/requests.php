@@ -11,4 +11,11 @@ $middleware = "middleware";
 
 requestGET(function () {
        echo 'test';
-}, $middleware, true);
+}, $middleware);
+
+
+requestPOST(function () {
+       echo 'test';
+}, function () {
+       echo 'middleware';
+});

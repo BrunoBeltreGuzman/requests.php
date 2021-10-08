@@ -4,8 +4,8 @@ require_once "../src/requests.php";
 
 requestDELETE(function () {
        try {
-              response200();
+              response("OK!");
        } catch (Exception $exception) {
-              responseExeption($exception);
+              response($exception, 500);
        }
 });

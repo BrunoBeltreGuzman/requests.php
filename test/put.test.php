@@ -4,8 +4,8 @@ require_once "../src/requests.php";
 
 requestPUT(function () {
        try {
-              response200();
+              response();
        } catch (Exception $exception) {
-              responseExeption($exception);
+              response($exception, 500);
        }
 });
