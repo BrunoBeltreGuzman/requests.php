@@ -1,5 +1,5 @@
 {
-       "name": "requests/php",
+       "name": "requests.php/php",
        "description": "Routers and methods to HTTP Requests and Response",
        "license": "MIT",
        "autoload": {
