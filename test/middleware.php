@@ -1,9 +1,6 @@
 <?php
 
-use Requests\Php\Request;
-use Requests\Php\Response;
-
-include __DIR__ . "/../vendor/autoload.php";
+require_once "../src/requests.php";
 
 
 function middleware()
@@ -12,12 +9,12 @@ function middleware()
 };
 $middleware = "middleware";
 
-Request::get(function () {
+requestGET(function () {
        echo 'test';
 }, $middleware);
 
 
-Request::post(function () {
+requestPOST(function () {
        echo 'test';
 }, function () {
        echo 'middleware';

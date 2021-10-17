@@ -2,67 +2,64 @@
 
 <?php
 
-use Requests\Php\Request;
-use Requests\Php\Response;
-
-include __DIR__ . "/../vendor/autoload.php";
+require_once "../src/requests.php";
 
 
 // {id}
-Request::get(function (Response $response) {
+requestGET(function () {
        try {
-              $GET = $response->getParameters();
-              $data = array('id' => $GET["id"]);
-              $response->response($data);
+              $GET = getGetParameters();
+              $data = [array('id' => $GET["id"])];
+              response($data);
        } catch (Exception $exception) {
-              $response->response($exception, 500);
+              response($exception, 500);
        }
 });
 
 // {name}
-Request::post(function (Response $response) {
+requestPOST(function () {
        try {
-              $POST = $response->getParameters();
-              $data = array('name' => $POST["name"]);
-              $response->response($data);
+              $POST = getPostParameters();
+              $data = [array('name' => $POST["name"])];
+              response($data);
        } catch (Exception $exception) {
-              $response->response($exception, 500);
+              response($exception, 500);
        }
 });
 
 
 // {id}
-Request::put(function (Response $response) {
+requestPUT(function () {
        try {
-              $PUT = $response->getParameters();
+              $PUT = getPutParameters();
 
-              $data = array('id' => $PUT["id"]);
-              $response->response($data);
+              $data = [array('id' => $PUT["id"])];
+              response($data);
        } catch (Exception $exception) {
-              $response->response($exception, 500);
+              response($exception, 500);
        }
 });
 
 
 // {name}
-Request::patch(function (Response $response) {
+requestPATCH(function () {
        try {
-              $PATCH = $response->getParameters();
-              $data = array('name' => $PATCH["name"]);
-              $response->response($data);
+              $PATCH = getPatchParameters();
+              $data = [array('name' => $PATCH["name"])];
+              response($data);
        } catch (Exception $exception) {
-              $response->response($exception, 500);
+              response($exception, 500);
        }
 });
 
 
 // {id}
-Request::delete(function (Response $response) {
+requestDELETE(function () {
        try {
-              $DELETE = $response->getParameters();
-              $data = array('id' => $DELETE["id"]);
-              $response->response($data);
+              $DELETE = getDeleteParameters();
+              $data = [array('id' => $DELETE["id"])];
+              response($data);
        } catch (Exception $exception) {
-              $response->response($exception, 500);
+              response($exception, 500);
        }
 });
