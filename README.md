@@ -14,11 +14,15 @@ Routers and methods to HTTP Requests and Response
 
 # Download
 
-[Download.zip](https://github.com/BrunoBeltreGuzman/requests.php/archive/refs/heads/main.zip)
+```console
+composer require requests.php/php
+```
 
 ```console
 git clone https://github.com/BrunoBeltreGuzman/requests.php.git
 ```
+
+[Download.zip](https://github.com/BrunoBeltreGuzman/requests.php/archive/refs/heads/main.zip)
 
 > Note:
 >
@@ -28,19 +32,13 @@ git clone https://github.com/BrunoBeltreGuzman/requests.php.git
 
 **Requests**
 
-| Function                     | Descripción                             |
-| ---------------------------- | --------------------------------------- |
-| **requestGET($callback)**    | set request with method HTTP `GET` .    |
-| **requestPOST($callback)**   | set request with method HTTP `POST` .   |
-| **requestPUT($callback)**    | set request with method HTTP `PUT` .    |
-| **requestPATCH($callback)**  | set request with method HTTP `PATCH` .  |
-| **requestDELETE($callback)** | set request with method HTTP `DELETE` . |
-
-Also you can use endpoint strictly, using `request` `method` and `strict`:
-
-```PHP
-requestGETStrict(callback);
-```
+| Function                       | Descripción                             |
+| ------------------------------ | --------------------------------------- |
+| **Request::get($callback)**    | set request with method HTTP `GET` .    |
+| **Request::post($callback)**   | set request with method HTTP `POST` .   |
+| **Request::put($callback)**    | set request with method HTTP `PUT` .    |
+| **Request::patch($callback)**  | set request with method HTTP `PATCH` .  |
+| **Request::delete($callback)** | set request with method HTTP `DELETE` . |
 
 > Note:
 >
@@ -50,20 +48,15 @@ requestGETStrict(callback);
 
 **Function:**
 
-| Function                                                 |
-| -------------------------------------------------------- |
-| **response(`$response = ""`, `$code = 200`);**                                           |
-
+| Function                                       |
+| ---------------------------------------------- |
+| **response(`$response = ""`, `$code = 200`);** |
 
 **Parameters**
 
-| Function                  | Descripción                                                       |
-| ------------------------- | ----------------------------------------------------------------- |
-| **getGetParameters()**    | Returns all the parameters in the request by the `GET` method.    |
-| **getPostParameters()**   | Returns all the parameters in the request by the `POST` method.   |
-| **getPutParameters()**    | Returns all the parameters in the request by the `PUT` method.    |
-| **getPatchParameters()**  | Returns all the parameters in the request by the `PATCH` method.  |
-| **getDeleteParameters()** | Returns all the parameters in the request by the `DELETE` method. |
+| Function                      | Descripción                                                    |
+| ----------------------------- | -------------------------------------------------------------- |
+| **Response::getParameters()** | Returns all the parameters in the request by the `ANY` method. |
 
 # Test
 
@@ -72,7 +65,7 @@ requestGETStrict(callback);
 **Request:** Request GET
 
 ```php
-requestGET(function () {
+Request::get(function (Response $response) {
        //you do anything
 });
 ```
@@ -80,7 +73,7 @@ requestGET(function () {
 **Request:** Request POST
 
 ```php
-requestPOST(function () {
+Request::post(function (Response $response) {
        //you do anything
 });
 ```
@@ -88,7 +81,7 @@ requestPOST(function () {
 **Request:** Request PUT
 
 ```php
-requestPUT(function () {
+Request::put(function (Response $response) {
        //you do anything
 });
 ```
@@ -96,7 +89,7 @@ requestPUT(function () {
 **Request:** Request PATCH
 
 ```php
-requestPATCH(function () {
+Request::patch(function (Response $response) {
        //you do anything
 });
 ```
@@ -104,7 +97,7 @@ requestPATCH(function () {
 **Request:** Request DELETE
 
 ```php
-requestDELETE(function () {
+Request::delete(function (Response $response) {
        //you do anything
 });
 ```
@@ -113,20 +106,23 @@ requestDELETE(function () {
 
 ```php
 
-require_once "requests.php";
+use Requests\Php\Request;
+use Requests\Php\Response;
+
+include __DIR__ . "/../vendor/autoload.php";
 
 // {id}
-requestGET(function () {
+Request::get(function (Response $response) { {
        try {
-              $GET = getGetParameters();
+              $GET = $response->getParameters();
               if ($GET["id"]) {
                      $data = [array('id' => $GET["id"])];
-                     response($data);
+                     $response->response($data);
               } else {
-                     response("BadRequest", 400);
+                     $response->response("BadRequest", 400);
               }
        } catch (Exception $exception) {
-              response($exception, 500);
+              $response->response($exception, 500);
        }
 });
 
