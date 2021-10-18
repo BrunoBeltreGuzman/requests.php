@@ -1,6 +1,7 @@
 {
        "name": "requests.php/php",
        "description": "Routers and methods to HTTP Requests and Response",
+       "version": "1.0.0",
        "license": "MIT",
        "autoload": {
               "psr-4": {
@@ -13,6 +14,5 @@
                      "email": "brunodevv@gmail.com"
               }
        ],
-       "minimum-stability": "stable",
        "require": {}
 }
