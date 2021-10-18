@@ -14,5 +14,6 @@
                      "email": "brunodevv@gmail.com"
               }
        ],
+       "minimum-stability": "dev",
        "require": {}
 }
